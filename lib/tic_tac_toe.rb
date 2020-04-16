@@ -41,18 +41,6 @@ def move(board, index, token)
   board[index] = token
 end
 
-def turn(board)
-  puts "Please enter 1-9:"
-  input = gets.strip
-  index = input_to_index(input)
-  if valid_move?(board, index)
-    move(board, index, token)
-    display_board(board)
-  else
-    turn(board)
-  end
-end
-
 def turn_count(board)
   board.select{|i| i == "X" || i == "O"}.length
 end
@@ -64,6 +52,20 @@ def current_player(board)
     "O"
   end
 end
+
+def turn(board)
+  puts "Please enter 1-9:"
+  input = gets.strip
+  index = input_to_index(input)
+  token = current_player(board)
+  if valid_move?(board, index)
+    move(board, index, token)
+    display_board(board)
+  else
+    turn(board)
+  end
+end
+
 
 def won?(board)
   WIN_COMBINATIONS.detect do |win_combination|
