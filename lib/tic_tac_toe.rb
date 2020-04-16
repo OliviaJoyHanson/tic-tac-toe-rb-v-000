@@ -85,9 +85,9 @@ def over?(board)
 end
 
 def winner(board)
-  if won?(board) && turn_count(board).even?
+  if won?(board) && win_combination.all?{|index| board[index] == "X"}
     "X"
-  elsif won?(board) && turn_count(board).odd?
+  elsif won?(board) && win_combination.all?{|index| board[index] == "O"}
     "O"
   end
 end
