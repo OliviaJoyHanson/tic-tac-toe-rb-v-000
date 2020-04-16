@@ -85,9 +85,9 @@ def over?(board)
 end
 
 def winner(board)
-  if won?(board) && win_combination.all?{|index| board[index] == "X"}
+  if won?(board) && won?(board).all?{|index| board[index] == "X"}
     "X"
-  elsif won?(board) && win_combination.all?{|index| board[index] == "O"}
+  elsif won?(board) && won?(board).all?{|index| board[index] == "O"}
     "O"
   end
 end
