@@ -62,7 +62,7 @@ def turn(board)
     turn(board)
   end
   move(board, index, token)
-  display_board
+  display_board(board)
   #if valid_move?(board, index)
   #  move(board, index, token)
   #  display_board(board)
