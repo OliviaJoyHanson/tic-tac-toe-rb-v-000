@@ -18,11 +18,15 @@ def display_board(board)
 end
 
 def input_to_index(input)
-  index = input.to_i - 1
+  index = input.strip.to_i - 1
 end
 
-def move(board, index, token)
-  board[index] = token
+def valid_move?(board, index)
+  if position_taken?(board, index) == false && index.between?(0,8)
+    true
+  else
+    false
+  end
 end
 
 def position_taken?(board, index)
@@ -33,11 +37,9 @@ def position_taken?(board, index)
   end
 end
 
-def valid_move?(board, index)
-  if index.between?(0,8) && !position_taken?(board, index)
-    true
-  else
-    false
+def move(board, index, token)
+  if valid_move?(board, index)
+    board[index] = token
   end
 end
 
