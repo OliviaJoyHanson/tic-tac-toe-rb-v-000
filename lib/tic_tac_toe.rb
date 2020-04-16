@@ -91,3 +91,14 @@ def winner(board)
     "O"
   end
 end
+
+def play(board)
+  until over?(board) do
+    turn(board)
+  end
+  if won?(board)
+    "Congrats!"
+  elsif draw?(board)
+    "This is a draaaw"
+  end
+end
