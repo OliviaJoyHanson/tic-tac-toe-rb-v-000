@@ -66,7 +66,6 @@ def current_player(board)
   end
 end
 
-
 def won?(board)
   WIN_COMBINATIONS.detect do |win_combination|
     win_combination.all?{|index| board[index] == "X"} || win_combination.all?{|index| board[index] == "O"}
