@@ -55,13 +55,7 @@ def turn(board)
 end
 
 def turn_count(board)
-  counter = 0
-  board.each do |i|
-    if i != " " && i != "" && i != nil
-      counter += 1
-    end
-  end
-  counter
+  board.select{|i| i == "X" || i == "O"}.length
 end
 
 def current_player(board)
