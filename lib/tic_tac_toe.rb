@@ -83,3 +83,11 @@ end
 def over?(board)
   won?(board) || draw?(board)
 end
+
+def winner(board)
+  if won?(board) && turn_count(board).even?
+    "X"
+  elsif won?(board) && turn_count(board).odd?
+    "O"
+  end
+end
