@@ -85,22 +85,18 @@ def over?(board)
 end
 
 def winner(board)
-  if won?(board) && won?(board).all?{|index| board[index] == "X"}
+  if won?(board) && current_player(board) == "X"
     "X"
-  elsif won?(board) && won?(board).all?{|index| board[index] == "O"}
+  elsif won?(board) && current_player(board) == "O"
     "O"
   end
+  #if won?(board) && won?(board).all?{|index| board[index] == "X"}
+  #  "X"
+  #elsif won?(board) && won?(board).all?{|index| board[index] == "O"}
+  #  "O"
+  #end
 end
 
 def play(board)
-  until over?(board)
-    turn(board)
-  end
-  if won?(board) && winner(board) == "X"
-    "Congratulations X!"
-  elsif won?(board) && winner(board) == "O"
-    "Congratulations O!"
-  elsif draw?(board)
-    "Cat's Game!"
-  end
+  turn(board)
 end
