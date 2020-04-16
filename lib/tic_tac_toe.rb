@@ -98,11 +98,11 @@ def play(board)
     turn(board)
   end
   if winner(board) == "X"
-    "Congratulations X!"
+    puts "Congratulations X!"
   elsif winner(board) == "O"
-    "Congratulations O!"
+    puts "Congratulations O!"
   elsif draw?(board)
-    "Cat's Game!"
+    puts "Cat's Game!"
   else
     nil
   end
